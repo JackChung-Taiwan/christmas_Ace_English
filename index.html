@@ -131,34 +131,34 @@
     width: 100%;
     text-align: center;
     color: white;
-    font-size: 4.5vmin; /* 手機版字體加大 */
-    font-weight: bold;  /* 加粗 */
-    padding: 1.5vmin;
+    /* 修改處：加大手機版字體，讓描邊看起來更細緻 */
+    font-size: 7vmin; 
+    font-weight: 900;  /* 超粗體 */
+    padding: 2vmin;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 30; 
     letter-spacing: 1px;
-    display: flex;             /* 使用 flex 讓內容居中對齊 */
-    justify-content: center;   /* 水平居中 */
-    align-items: center;       /* 垂直居中 */
-    gap: 8px;                  /* 設定元素之間的間距 */
+    display: flex;             
+    justify-content: center;   
+    align-items: center;       
+    gap: 8px;                  
   }
 
-  /* Ace English 深黃字+白框 (修改處) */
+  /* Ace English 深黃字+白框 */
   .ace-style {
-      color: #FFC107; /* 深黃色 (Amber) */
-      -webkit-text-stroke: 0.4px white; /* 細白框 */
-      text-stroke: 0.4px white; 
-      font-weight: 900;
-      text-shadow: 2px 2px 0px rgba(0,0,0,0.8); /* 保留陰影增加對比 */
+      color: #FFC107; /* 深黃色 */
+      -webkit-text-stroke: 0.8px white; 
+      text-stroke: 0.8px white; 
+      /* 移除文字陰影，讓白框更純粹乾淨 */
+      text-shadow: 3px 3px 0px rgba(0,0,0,0.5); 
   }
 
-  /* 翊華教育 深綠字+白框 (修改處) */
+  /* 翊華教育 深綠字+白框 */
   .yihua-style {
       color: #2E7D32; /* 深綠色 */
-      -webkit-text-stroke: 0.4px white; /* 細白框 */
-      text-stroke: 0.4px white;
-      font-weight: 900;
-      text-shadow: 2px 2px 0px rgba(0,0,0,0.8); /* 保留陰影增加對比 */
+      -webkit-text-stroke: 0.8px white;
+      text-stroke: 0.8px white;
+      text-shadow: 3px 3px 0px rgba(0,0,0,0.5);
   }
 
   .hidden { display: none !important; }
@@ -170,9 +170,12 @@
     #listen-hint { font-size: 5rem; }
     .victory-text { font-size: 2.5rem; }
     #progress-container { top: 80px; }
-    #footer { font-size: 1.5rem; padding: 15px; }
-    /* 電腦版描邊調整 */
-    .ace-style, .yihua-style { -webkit-text-stroke: 1px white; text-stroke: 1px white; }
+    
+    /* 修改處：加大電腦版字體 */
+    #footer { font-size: 2.5rem; padding: 20px; }
+    
+    /* 因為字變大了，描邊稍微加一點點寬度也不會覺得粗，反而更清晰 */
+    .ace-style, .yihua-style { -webkit-text-stroke: 1.2px white; text-stroke: 1.2px white; }
   }
 </style>
 </head>
