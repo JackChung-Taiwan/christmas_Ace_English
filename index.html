@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>聖誕光劍 (切開特效版)</title>
+<title>聖誕光劍 (Ace English x 翊華教育)</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
 
 <style>
@@ -124,20 +124,41 @@
   }
   #listen-hint.show { display: block; opacity: 1; }
 
-  /* --- 頁腳設定 --- */
+  /* --- 頁腳設定 (Ace English x 翊華教育) --- */
   #footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
     color: white;
-    font-size: 4.5vmin;
-    font-weight: bold; 
+    font-size: 4.5vmin; /* 手機版字體加大 */
+    font-weight: bold;  /* 加粗 */
     padding: 1.5vmin;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 30; 
     letter-spacing: 1px;
-    text-shadow: 1px 1px 2px black;
+    display: flex;             /* 使用 flex 讓內容居中對齊 */
+    justify-content: center;   /* 水平居中 */
+    align-items: center;       /* 垂直居中 */
+    gap: 8px;                  /* 設定元素之間的間距 */
+  }
+
+  /* Ace English 黃字黑框 */
+  .ace-style {
+      color: #ffd700; /* 金黃色 */
+      -webkit-text-stroke: 1.2px black; /* CSS文字描邊 */
+      text-stroke: 1.2px black; 
+      font-weight: 900;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+  }
+
+  /* 翊華教育 綠字黑框 */
+  .yihua-style {
+      color: #2ecc71; /* 鮮綠色 */
+      -webkit-text-stroke: 1.2px black;
+      text-stroke: 1.2px black;
+      font-weight: 900;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
   }
 
   .hidden { display: none !important; }
@@ -150,6 +171,7 @@
     .victory-text { font-size: 2.5rem; }
     #progress-container { top: 80px; }
     #footer { font-size: 1.5rem; padding: 15px; }
+    .ace-style, .yihua-style { -webkit-text-stroke: 1.5px black; text-stroke: 1.5px black; }
   }
 </style>
 </head>
@@ -178,7 +200,9 @@
 
   </div>
 
-  <div id="footer">台灣兒童美語協會製作</div>
+  <div id="footer">
+    <span class="ace-style">Ace English</span> x <span class="yihua-style">翊華教育</span>
+  </div>
 
 <script>
 // --- 資料庫 ---
@@ -214,7 +238,7 @@ let correctCount = 0;
 const MAX_SCORE = 20;
 
 let cards = [];
-let slicedCards = []; // 【新增】存放被切開的碎片
+let slicedCards = []; // 存放被切開的碎片
 let particles = [];
 let saberTrail = [];
 let snowFlakes = []; 
@@ -320,7 +344,7 @@ function spawnCards(target, distractor) {
   launchCard(R.rightLaneX, height + 50, R.rightLaneX, height * 0.2, items[1], items[1].word === currentTargetWord);
 }
 
-// --- 【重要】共用繪圖函式，給正常卡片和切開卡片使用 ---
+// --- 共用繪圖函式 ---
 function drawCardVisual(size, data, isTarget) {
     fill(255); 
     stroke(isTarget ? "#c0392b" : "#2c3e50"); 
@@ -375,7 +399,7 @@ function draw() {
   drawChristmasBorder();
 
   drawParticles(); 
-  updateAndDrawSlicedCards(); // 【新增】繪製切開的卡片
+  updateAndDrawSlicedCards(); // 繪製切開的卡片
 
   if(!isGameRunning) return;
 
@@ -418,7 +442,7 @@ function draw() {
   drawFeedback();
 }
 
-// --- 【核心功能】切開特效邏輯 ---
+// --- 切開特效邏輯 ---
 function createSliceEffect(card) {
     // 產生左半邊碎片 (向左飛)
     slicedCards.push({
@@ -485,7 +509,7 @@ function updateAndDrawSlicedCards() {
         }
         drawingContext.clip();
 
-        // 繪製完整的卡片內容 (因為被 Clip 了，所以只會顯示一半)
+        // 繪製完整的卡片內容
         drawCardVisual(p.size, p.data, p.isTarget);
         
         drawingContext.restore();
@@ -511,7 +535,7 @@ function triggerVictory() {
 }
 
 function handleHit(card, index) {
-  // 1. 【新增】呼叫切開特效
+  // 1. 切開特效
   createSliceEffect(card);
   
   // 2. 移除原卡片
