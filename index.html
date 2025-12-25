@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>聖誕光劍 (最終排版修正版)</title>
+<title>聖誕光劍 (Ace x 翊華聯名版)</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
 
 <style>
@@ -124,17 +124,47 @@
   }
   #listen-hint.show { display: block; opacity: 1; }
 
-  /* 頁腳 */
+  /* --- 頁腳設定 (品牌聯名版) --- */
   #footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
+    padding: 2vmin;
+    background-color: rgba(0, 0, 0, 0.7); /* 加深背景，凸顯文字 */
+    z-index: 30; 
+    
+    /* 基礎字體設定 */
     color: white;
-    font-size: 2vmin;
-    padding: 1vmin;
-    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
-    z-index: 30; /* 確保在最上層 */
+    font-size: 5vmin; /* 再加大 */
+    font-weight: 900; /* 極粗體 */
+    letter-spacing: 1px;
+    font-family: "Arial Black", "Microsoft JhengHei", sans-serif;
+  }
+
+  /* Ace English 樣式 (金黃字+白框) */
+  .ace-style {
+    color: #FFD700; /* 金黃色 */
+    text-shadow: 
+      2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 
+      1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    margin-right: 5px;
+  }
+
+  /* 翊華教育 樣式 (綠色+白框) */
+  .yihua-style {
+    color: #2ecc71; /* 鮮豔的綠色 */
+    text-shadow: 
+      2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 
+      1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    margin-left: 5px;
+  }
+
+  /* 連結符號 x 的樣式 */
+  .x-style {
+    color: white;
+    font-weight: normal;
+    font-size: 0.8em; /* 稍微小一點 */
   }
 
   .hidden { display: none !important; }
@@ -146,7 +176,9 @@
     #listen-hint { font-size: 5rem; }
     .victory-text { font-size: 2.5rem; }
     #progress-container { top: 80px; }
-    #footer { font-size: 1rem; padding: 10px; }
+    
+    /* 電腦版頁腳字體 */
+    #footer { font-size: 2rem; padding: 20px; }
   }
 </style>
 </head>
@@ -175,7 +207,11 @@
 
   </div>
 
-  <div id="footer">Ace English x 翊華教育製作</div>
+  <div id="footer">
+    <span class="ace-style">Ace English</span>
+    <span class="x-style">x</span>
+    <span class="yihua-style">翊華教育</span>製作
+  </div>
 
 <script>
 // --- 資料庫 ---
