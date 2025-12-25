@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>聖誕光劍 (Ace x 翊華聯名版)</title>
+<title>聖誕光劍 (Ace x 翊華聯名最終版)</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
 
 <style>
@@ -131,20 +131,19 @@
     width: 100%;
     text-align: center;
     padding: 2vmin;
-    background-color: rgba(0, 0, 0, 0.7); /* 加深背景，凸顯文字 */
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 30; 
     
-    /* 基礎字體設定 */
     color: white;
-    font-size: 5vmin; /* 再加大 */
-    font-weight: 900; /* 極粗體 */
+    font-size: 5vmin; 
+    font-weight: 900; 
     letter-spacing: 1px;
     font-family: "Arial Black", "Microsoft JhengHei", sans-serif;
   }
 
-  /* Ace English 樣式 (金黃字+白框) */
+  /* Ace English 樣式 (顏色改為深琥珀金 #FFB300) */
   .ace-style {
-    color: #FFD700; /* 金黃色 */
+    color: #FFB300; /* <-- 修改處：更深、更顯眼的金色 */
     text-shadow: 
       2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 
       1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
@@ -153,7 +152,7 @@
 
   /* 翊華教育 樣式 (綠色+白框) */
   .yihua-style {
-    color: #2ecc71; /* 鮮豔的綠色 */
+    color: #2ecc71; 
     text-shadow: 
       2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 
       1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
@@ -164,7 +163,7 @@
   .x-style {
     color: white;
     font-weight: normal;
-    font-size: 0.8em; /* 稍微小一點 */
+    font-size: 0.8em; 
   }
 
   .hidden { display: none !important; }
@@ -176,8 +175,6 @@
     #listen-hint { font-size: 5rem; }
     .victory-text { font-size: 2.5rem; }
     #progress-container { top: 80px; }
-    
-    /* 電腦版頁腳字體 */
     #footer { font-size: 2rem; padding: 20px; }
   }
 </style>
