@@ -143,22 +143,22 @@
     gap: 8px;                  /* 設定元素之間的間距 */
   }
 
-  /* Ace English 黃字黑框 */
+  /* Ace English 黃字白框 (修改處) */
   .ace-style {
       color: #ffd700; /* 金黃色 */
-      -webkit-text-stroke: 1.2px black; /* CSS文字描邊 */
-      text-stroke: 1.2px black; 
+      -webkit-text-stroke: 1.2px white; /* CSS文字描邊改為白色 */
+      text-stroke: 1.2px white; 
       font-weight: 900;
-      text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.8); /* 保留陰影增加對比 */
   }
 
-  /* 翊華教育 綠字黑框 */
+  /* 翊華教育 綠字白框 (修改處) */
   .yihua-style {
       color: #2ecc71; /* 鮮綠色 */
-      -webkit-text-stroke: 1.2px black;
-      text-stroke: 1.2px black;
+      -webkit-text-stroke: 1.2px white; /* CSS文字描邊改為白色 */
+      text-stroke: 1.2px white;
       font-weight: 900;
-      text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.8); /* 保留陰影增加對比 */
   }
 
   .hidden { display: none !important; }
@@ -171,7 +171,8 @@
     .victory-text { font-size: 2.5rem; }
     #progress-container { top: 80px; }
     #footer { font-size: 1.5rem; padding: 15px; }
-    .ace-style, .yihua-style { -webkit-text-stroke: 1.5px black; text-stroke: 1.5px black; }
+    /* 電腦版描邊也改為白色 (修改處) */
+    .ace-style, .yihua-style { -webkit-text-stroke: 1.5px white; text-stroke: 1.5px white; }
   }
 </style>
 </head>
